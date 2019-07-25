@@ -1,0 +1,2 @@
+Windows-1252 或 CP-1252 是拉丁字母的字符编码，主要用于英文或某些其他西方文字版本 Microsoft Windows 的默认编码。其为 Windows 代码页的其中一个。LaTeX 软件称之为“ansinew”。
+

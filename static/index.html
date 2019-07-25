@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+    <div>
+        <img src="./img/csdn-zx.png" />
+        <h3>seccess</h3>
+        <div class="buttom" id="bt">请求</div>
+        <div id="content"></div>
+        <div class="buttom" id="redirect">301请求</div>
+        <div class="buttom" id="dwld">下载</div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="./js/dayjs.min.js"></script>
+    <script>
+        $(function () {
+            $(document).on('click','#bt',function () {
+                $.ajax({
+                    type: 'POST',
+                    url: "http://localhost:3000/myInfo?myQuery=2222&b=1222",
+                    dataType: 'json',
+                    headers:{
+                        "Content-Type":"application/json",
+                        "X-DEV-ID":"11s"
+                    },
+                    contentType: "application/json",
+                    // processData:false,
+                    // contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify({
+                       useName:'222',
+                       phoneNumber:'17600293496' 
+                    }),
+                    success: function (data, textStatus, jqXHR) {
+                        if(data.status===200){
+                            $('#content').html(`姓名：${data.info.name}<br/>`);
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, error) {
+
+                    }
+
+                })
+            })
+
+            $(document).on('click','#redirect',function(){
+                $.post("http://localhost:3000/redirect");
+            })
+            var c=new FormData();
+            c.append('fss','22222');
+            window.addEventListener('unload',function(){
+                navigator.sendBeacon("http://localhost:3000/report",c);
+            }, false);
+            
+            $('#dwld').click(function(e){
+                e.preventDefault();
+                $.get("http://localhost:3000/download");
+            })
+        })
+    </script>
+</body>
+
+</html>

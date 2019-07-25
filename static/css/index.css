@@ -1,0 +1,33 @@
+html{
+    background:#f7f7f7;
+    color:red;
+    font-size:14px;
+    height:100%;
+}
+body{
+    /* background:red;
+    color:red;
+    font-size:14px; */
+    height:100%;
+}
+img{
+    width:100px;
+    height:100px;
+}
+.buttom{
+    width: 100px;
+    height:30px;
+    padding:0;
+    margin:0;
+    text-align:center;
+    line-height:30px;
+    background:#346bee;
+    border-radius:5px;
+    color:#fff;
+    cursor:pointer;
+    user-select: none;
+    margin-bottom:10px;
+}
+.buttom:hover{
+    background:#6d97f8;
+}
